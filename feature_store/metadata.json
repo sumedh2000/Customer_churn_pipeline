@@ -1,0 +1,58 @@
+{
+  "entities": {
+    "customer": {
+      "entity_id": "customerID",
+      "description": "Customer unique identifier."
+    }
+  },
+  "features": [
+    {
+      "name": "TotalSpend",
+      "dtype": "float",
+      "source_table": "customers_transformed",
+      "entity": "customer",
+      "version": "1.0",
+      "description": "Cumulative spend; from TotalCharges or MonthlyCharges*tenure."
+    },
+    {
+      "name": "AvgMonthlySpend",
+      "dtype": "float",
+      "source_table": "customers_transformed",
+      "entity": "customer",
+      "version": "1.0",
+      "description": "TotalSpend divided by tenure."
+    },
+    {
+      "name": "tenure",
+      "dtype": "int",
+      "source_table": "customers_transformed",
+      "entity": "customer",
+      "version": "1.0",
+      "description": "Months since start."
+    },
+    {
+      "name": "MonthlyCharges",
+      "dtype": "float",
+      "source_table": "customers_transformed",
+      "entity": "customer",
+      "version": "1.0",
+      "description": "Current monthly charge."
+    },
+    {
+      "name": "NumAddons",
+      "dtype": "float",
+      "source_table": "customers_transformed",
+      "entity": "customer",
+      "version": "1.0",
+      "description": "Count of *_Yes add-on features."
+    },
+    {
+      "name": "Churn",
+      "dtype": "int",
+      "source_table": "customers_transformed",
+      "entity": "customer",
+      "version": "1.0",
+      "description": "Label: 1 if churn, else 0."
+    }
+  ]
+}

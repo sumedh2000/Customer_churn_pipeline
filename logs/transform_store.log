@@ -1,0 +1,243 @@
+2025-08-21 13:21:45,567 - ERROR - transform_store failed
+Traceback (most recent call last):
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 309, in <module>
+    main()
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 68, in main
+    raise FileNotFoundError("No cleaned/transformed CSV found. Run Stage 5 first (create a cleaned CSV).")
+FileNotFoundError: No cleaned/transformed CSV found. Run Stage 5 first (create a cleaned CSV).
+2025-08-21 13:23:42,860 - ERROR - transform_store failed
+Traceback (most recent call last):
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 310, in <module>
+    main()
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 69, in main
+    raise FileNotFoundError("No cleaned/transformed CSV found. Run Stage 5 first (create a cleaned CSV).")
+FileNotFoundError: No cleaned/transformed CSV found. Run Stage 5 first (create a cleaned CSV).
+2025-08-21 13:26:50,486 - INFO - Starting data transformation process
+2025-08-21 13:26:55,168 - INFO - Loaded cleaned data with shape (7043, 6561)
+2025-08-21 13:40:47,086 - INFO - Stage 6: Feature Transformation & Storage started.
+2025-08-21 13:40:51,797 - INFO - Cleaned data loaded successfully: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\clean\cleaned_churn.csv
+2025-08-21 13:40:51,806 - WARNING - Missing service columns in cleaned data: ['PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies']
+2025-08-21 13:40:51,806 - WARNING - No service columns found. 'num_services' set to 0.
+2025-08-21 13:40:51,808 - INFO - Feature 'tenure_months' created.
+2025-08-21 13:40:59,018 - INFO - Transformed data saved successfully: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\processed\customer_data_transformed.csv
+2025-08-21 13:40:59,018 - INFO - Stage 6 completed successfully.
+2025-08-21 14:00:37,956 - INFO - Stage 6: Data Transformation & Storage started.
+2025-08-21 14:00:42,695 - INFO - Cleaned data loaded successfully: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\clean\cleaned_churn.csv
+2025-08-21 14:02:50,911 - INFO - Stage 6: Data Transformation & Storage started.
+2025-08-21 14:02:55,657 - INFO - Cleaned data loaded successfully: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\clean\cleaned_churn.csv
+2025-08-21 14:02:55,676 - WARNING - 'TotalCharges' column not found. Filled with 0.
+2025-08-21 14:02:55,680 - INFO - Feature engineering completed.
+2025-08-21 14:02:55,684 - INFO - Numeric features scaled using MinMaxScaler.
+2025-08-21 14:02:55,944 - ERROR - Failed to store data in SQLite: too many columns on customer_churn
+2025-08-21 14:05:23,383 - INFO - Stage 6: Data Transformation & Storage started.
+2025-08-21 14:05:28,068 - INFO - Cleaned data loaded successfully: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\clean\cleaned_churn.csv
+2025-08-21 14:05:28,095 - WARNING - 'TotalCharges' column not found. Filled with 0.
+2025-08-21 14:05:28,097 - INFO - Feature engineering completed.
+2025-08-21 14:05:28,101 - INFO - Numeric features scaled using MinMaxScaler.
+2025-08-21 14:05:28,353 - ERROR - Failed to store data in SQLite: too many columns on customer_churn
+2025-08-21 14:25:51,033 [INFO] Loaded cleaned data: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\clean\cleaned_churn.csv (rows=7043, cols=6561)
+2025-08-21 14:25:51,053 [WARNING] No target/label column detected. Proceeding without target.
+2025-08-21 14:25:51,215 [INFO] Detected 6562 numeric and 0 categorical features.
+2025-08-21 14:25:51,345 [ERROR] Stage 6 failed: Cannot cast object dtype to float64
+Traceback (most recent call last):
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\core\arrays\categorical.py", line 591, in astype
+    new_cats = new_cats.astype(dtype=dtype, copy=copy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '0-6'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 323, in main
+    X_t_df, meta = fit_transform_features(df_fe, id_col, target_col)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 167, in fit_transform_features
+    X_t = pipe.fit_transform(X)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\pipeline.py", line 730, in fit_transform
+    return last_step.fit_transform(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\compose\_column_transformer.py", line 1001, in fit_transform
+    result = self._call_func_on_transformers(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\compose\_column_transformer.py", line 910, in _call_func_on_transformers
+    return Parallel(n_jobs=self.n_jobs)(jobs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\utils\parallel.py", line 77, in __call__
+    return super().__call__(iterable_with_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\joblib\parallel.py", line 1986, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\joblib\parallel.py", line 1914, in _get_sequential_output
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\utils\parallel.py", line 139, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\pipeline.py", line 1551, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\base.py", line 918, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\preprocessing\_data.py", line 894, in fit
+    return self.partial_fit(X, y, sample_weight)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\preprocessing\_data.py", line 930, in partial_fit
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\utils\validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\sklearn\utils\validation.py", line 973, in check_array
+    array = array.astype(new_dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\core\generic.py", line 6643, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\core\internals\managers.py", line 430, in astype
+    return self.apply(
+           ^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\core\internals\managers.py", line 363, in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py", line 758, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\core\dtypes\astype.py", line 237, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\core\dtypes\astype.py", line 179, in astype_array
+    values = values.astype(dtype, copy=copy)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\core\arrays\categorical.py", line 602, in astype
+    raise ValueError(msg)
+ValueError: Cannot cast object dtype to float64
+2025-08-21 14:29:57,210 [INFO] Loaded cleaned data: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\clean\cleaned_churn.csv (rows=7043, cols=6561)
+2025-08-21 14:29:57,220 [WARNING] No target/label column detected. Proceeding without target.
+2025-08-21 14:29:57,408 [INFO] Detected 6561 numeric and 1 categorical features.
+2025-08-21 14:30:36,613 [INFO] Wrote transformed CSV: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\processed\customer_data_transformed.csv (rows=7043, cols=6563)
+2025-08-21 14:32:05,205 [ERROR] Stage 6 failed: too many columns on features_transformed_wide
+Traceback (most recent call last):
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 346, in main
+    save_to_sqlite(X_t_df, meta, SQLITE_DB, id_col_guess=id_col)
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 273, in save_to_sqlite
+    df_wide.to_sql(table_name, conn, if_exists="replace", index=False)
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 2850, in to_sql
+    table.create()
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 995, in create
+    self._execute_create()
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 2524, in _execute_create
+    conn.execute(stmt)
+sqlite3.OperationalError: too many columns on features_transformed_wide
+2025-08-21 14:38:23,751 [INFO] Loaded cleaned data: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\clean\cleaned_churn.csv (rows=7043, cols=6561)
+2025-08-21 14:38:23,768 [WARNING] No target/label column detected. Proceeding without target.
+2025-08-21 14:38:24,138 [INFO] Detected 6561 numeric and 1 categorical features.
+2025-08-21 14:39:39,934 [INFO] Wrote transformed CSV: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\processed\customer_data_transformed.csv (rows=7043, cols=6563)
+2025-08-21 14:41:52,023 [ERROR] Stage 6 failed: too many columns on features_transformed_wide
+Traceback (most recent call last):
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 346, in main
+    save_to_sqlite(X_t_df, meta, SQLITE_DB, id_col_guess=id_col)
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 273, in save_to_sqlite
+    df_wide.to_sql(table_name, conn, if_exists="replace", index=False)
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 2850, in to_sql
+    table.create()
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 995, in create
+    self._execute_create()
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 2524, in _execute_create
+    conn.execute(stmt)
+sqlite3.OperationalError: too many columns on features_transformed_wide
+2025-08-21 14:45:31,136 [INFO] Loaded cleaned data: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\clean\cleaned_churn.csv (rows=7043, cols=6561)
+2025-08-21 14:45:31,139 [WARNING] No target/label column detected. Proceeding without target.
+2025-08-21 14:45:31,349 [INFO] Detected 6561 numeric and 1 categorical features.
+2025-08-21 14:46:32,366 [INFO] Wrote transformed CSV: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\processed\customer_data_transformed.csv (rows=7043, cols=6563)
+2025-08-21 14:46:32,368 [WARNING] Parquet write failed (Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.). Falling back to pickle.
+2025-08-21 14:46:32,777 [INFO] Wrote full matrix to Pickle: C:\Users\sumed\Desktop\Customer_churn_pipeline\data\transformed\customer_data_transformed.pkl
+2025-08-21 14:46:33,224 [ERROR] Stage 6 failed: too many columns on features_sample
+Traceback (most recent call last):
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 341, in main
+    save_to_sqlite_slim(X_t_df, meta, SQLITE_DB, artifact_path, artifact_kind)
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 272, in save_to_sqlite_slim
+    df_sample.to_sql(SAMPLE_TABLE_NAME, conn, if_exists="replace", index=False)
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 2850, in to_sql
+    table.create()
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 995, in create
+    self._execute_create()
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 2524, in _execute_create
+    conn.execute(stmt)
+sqlite3.OperationalError: too many columns on features_sample
+2025-08-21 14:52:20,408 - INFO - Stage6 start | source=data/clean\cleaned_churn.csv
+2025-08-21 14:52:35,519 - ERROR - Stage6 failed: too many columns on customers_transformed
+Traceback (most recent call last):
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 226, in main
+    write_sqlite(df_tr, DB_PATH, table_name="customers_transformed")
+  File "C:\Users\sumed\Desktop\Customer_churn_pipeline\scripts\transform_store.py", line 133, in write_sqlite
+    df.to_sql(table_name, conn, if_exists="replace", index=False)
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 2850, in to_sql
+    table.create()
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 995, in create
+    self._execute_create()
+  File "C:\Users\sumed\anaconda3\Lib\site-packages\pandas\io\sql.py", line 2524, in _execute_create
+    conn.execute(stmt)
+sqlite3.OperationalError: too many columns on customers_transformed
+2025-08-21 15:04:29,911 - INFO - Stage6 start | source=data/clean\cleaned_churn.csv
+2025-08-21 15:04:34,464 - WARNING - Column cap applied | kept=950 dropped=5615
+2025-08-21 15:04:36,219 - INFO - Stage6 complete | out_csv=data/transformed\transformed_customers_20250821_150434.csv | db=data/customer_churn.db | rows=7043 cols=950
+2025-08-21 15:38:50,774 - INFO - Stage6 start | source=data/clean\cleaned_churn.csv
+2025-08-21 15:38:50,962 - INFO - Stage6 complete | out_csv=data/transformed\transformed_customers_20250821_153850.csv | db=data/customer_churn.db | rows=7043 cols=36

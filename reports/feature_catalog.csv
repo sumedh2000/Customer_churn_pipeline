@@ -1,0 +1,7 @@
+feature,dtype,entity,version,source_table,in_db,description
+TotalSpend,float,customer,1.0,customers_transformed,yes,Cumulative spend; from TotalCharges or MonthlyCharges*tenure.
+AvgMonthlySpend,float,customer,1.0,customers_transformed,yes,TotalSpend divided by tenure.
+tenure,int,customer,1.0,customers_transformed,yes,Months since start.
+MonthlyCharges,float,customer,1.0,customers_transformed,yes,Current monthly charge.
+NumAddons,float,customer,1.0,customers_transformed,yes,Count of *_Yes add-on features.
+Churn,int,customer,1.0,customers_transformed,yes,"Label: 1 if churn, else 0."

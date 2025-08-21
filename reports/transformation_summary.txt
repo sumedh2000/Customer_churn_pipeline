@@ -1,0 +1,12 @@
+Transformation Summary
+Timestamp        : 2025-08-21 15:38:50
+Source           : cleaned_churn.csv
+Rows x Cols      : 7043 x 36
+Engineered feats : TotalSpend, AvgMonthlySpend, TenureGroup, NumAddons
+
+Notes:
+- Churn normalized to 0/1 if needed.
+- TotalSpend uses TotalCharges when available; else MonthlyCharges * tenure.
+- AvgMonthlySpend = TotalSpend / tenure (0 handled as NaN then filled 0).
+- TenureGroup buckets: 0-6, 7-12, 13-24, 25-48, 48+
+- NumAddons counts *_Yes one-hot columns if present.

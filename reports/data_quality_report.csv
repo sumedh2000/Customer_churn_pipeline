@@ -1,0 +1,4 @@
+SourceFile,Status,Issue
+telecom_churn_github_20250821.csv,PASSED,No issues found
+telecom_churn_kaggle_20250821.csv,PASSED,No issues found
+WA_Fn-UseC_-Telco-Customer-Churn.csv,PASSED,No issues found

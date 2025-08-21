@@ -1,0 +1,4 @@
+2025-08-21 12:44:12,127 - INFO - SUCCESS - Ingested from GitHub \u2192 ./raw_data/telecom_churn_github_20250821.csv
+2025-08-21 12:44:16,847 - INFO - SUCCESS - Ingested from Kaggle \u2192 ./raw_data/telecom_churn_kaggle_20250821.csv
+2025-08-21 12:48:44,444 - INFO - SUCCESS - Ingested from GitHub \u2192 ./raw_data/telecom_churn_github_20250821.csv
+2025-08-21 12:48:47,758 - ERROR - Kaggle ingestion FAILED: [WinError 183] Cannot create a file when that file already exists: './raw_data/WA_Fn-UseC_-Telco-Customer-Churn.csv' -> './raw_data/telecom_churn_kaggle_20250821.csv'
